@@ -608,6 +608,10 @@ void ScoreRecord()
         CursorGoto(40, 18);
         printf("输入名称：");
         fgets(player, sizeof(player), stdin);
+        if (player[0] == '\n')
+        {
+            strcpy(player, "unkown_player");
+        }
         player[strcspn(player, "\n")] = '\0';
         FILE *fp = nullptr;
         switch (mode_code)
